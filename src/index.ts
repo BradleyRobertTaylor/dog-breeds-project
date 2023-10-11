@@ -1,8 +1,8 @@
 import express from "express";
-import breedsRouter from "./routes/breedsRouter";
+import dogBreedsRouter from "./routes/dogBreedsRouter";
 const app = express();
 
-app.use("/breeds", breedsRouter);
+app.use("/breeds", dogBreedsRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {

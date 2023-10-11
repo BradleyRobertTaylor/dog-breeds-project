@@ -1,4 +1,4 @@
-import { Breeds } from "../services/breedsService";
+import { Breeds } from "../services/dogBreedsService";
 
 export const flattenDogBreeds = (breeds: Breeds) => {
   const result: string[] = [];

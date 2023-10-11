@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { getAllBreeds } from "../services/breedsService";
+import { fetchAllDogBreeds } from "../services/dogBreedsService";
 import { flattenDogBreeds } from "../utils/flattenDogBreeds";
 
-const getBreeds = async (_: Request, res: Response) => {
-  const data = await getAllBreeds();
+const getDogBreeds = async (_: Request, res: Response) => {
+  const data = await fetchAllDogBreeds();
   if ("error" in data) {
     res.status(504).json({ error: data.error });
   } else {
@@ -12,4 +12,4 @@ const getBreeds = async (_: Request, res: Response) => {
   }
 };
 
-export default { getBreeds };
+export default { getDogBreeds };

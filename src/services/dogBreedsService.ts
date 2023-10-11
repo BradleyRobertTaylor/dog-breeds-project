@@ -8,8 +8,12 @@ export type AllBreedsResponse = {
   message: Breeds;
 };
 
-export const getAllBreeds = async (): Promise<
-  AllBreedsResponse | { error: string }
+type ResponseError = {
+  error: string;
+};
+
+export const fetchAllDogBreeds = async (): Promise<
+  AllBreedsResponse | ResponseError
 > => {
   try {
     const res = await fetch(BASE_URL);
